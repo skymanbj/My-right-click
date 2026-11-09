@@ -2,7 +2,7 @@
 
 > 一款 Manifest V3 浏览器扩展。选中文字后可调用搜索、翻译、Markdown 转换、二维码、站长工具与本地笔记工作流，入口集中在右键菜单与悬浮工具栏。
 
-**仓库**：https://github.com/skymanbj/My-right-key
+**仓库**：https://github.com/skymanbj/My-right-click
 **适用**：Chrome / Edge 等 Chromium 内核浏览器
 **版本**：1.3.6 · 文档更新于 2026-11-09
 **许可证**：[MIT](LICENSE)（第三方库除外，见文末说明）
@@ -11,7 +11,7 @@
 
 ## 📥 安装与更新
 
-1. `git clone https://github.com/skymanbj/My-right-key.git`，或直接下载 ZIP 解压。
+1. `git clone https://github.com/skymanbj/My-right-click.git`，或直接下载 ZIP 解压。
 2. 打开 `chrome://extensions/`，开启右上角「开发者模式」。
 3. 点击「加载已解压的扩展程序」，选择**包含 `manifest.json` 的那一层目录**。
 4. 修改代码后点扩展卡片上的刷新按钮；若改动涉及 `content.js`（悬浮工具栏），还需刷新已打开的网页才会重新注入。
