@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
+            width: 320px;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .setting-group {
+            margin-bottom: 16px;
+        }
+
+        .setting-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 6px;
+        }
+
+        .setting-group .description {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 6px;
+        }
+
+        .setting-group input[type="password"],
+        .setting-group input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+            background: #f8fafc;
+        }
+
+        .setting-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
+        .status {
+            margin-top: 12px;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            text-align: center;
+            display: none;
+        }
+
+        .status.success {
+            display: block;
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .status.error {
+            display: block;
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .version {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        .hint {
+            font-size: 11px;
+            color: #64748b;
+            text-align: center;
+            margin-top: 12px;
+            padding: 8px;
+            background: #f0f9ff;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>我的右键设置</h1>
+
+        <div class="setting-group">
+            <label for="joplinToken">📝 Joplin API Token</label>
+            <p class="description">用于将笔记同步到 Joplin</p>
+            <input type="password" id="joplinToken" placeholder="请输入你的 Joplin API Token">
+        </div>
+
+        <div class="setting-group">
+            <label for="joplinUrl">🔗 Joplin Server URL（可选）</label>
+            <input type="text" id="joplinUrl" placeholder="http://127.0.0.1:41184">
+        </div>
+
+        <button class="btn btn-primary" id="saveBtn">保存设置</button>
+        <button class="btn btn-secondary" id="clearBtn">清除 Token</button>
+
+        <div class="status" id="status"></div>
+        
+        <p class="hint">💡 获取 Token：Joplin → 工具 → 选项 → 高级 → 网页服务 API 密钥</p>
+
+        <p class="version">我的右键 v1.3.6 MV3</p>
+    </div>
+
+    <!-- MV3 CSP 禁止内联脚本，逻辑已外置到 popup.js -->
+    <script src="popup.js"></script>
+</body>
+</html>
